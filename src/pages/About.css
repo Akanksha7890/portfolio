@@ -1,0 +1,149 @@
+/* ── Shared page layout ── */
+.page-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+}
+
+.section-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin-bottom: 2.5rem;
+}
+
+/* ── About ── */
+.about__summary {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.9;
+  margin-bottom: 2.5rem;
+  border-left: 2px solid var(--accent);
+  padding-left: 1.5rem;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.about__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem;
+}
+
+.about__card-title {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  margin-bottom: 0.65rem;
+}
+
+.about__card-text {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.about__card-link {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--accent3);
+  text-decoration: none;
+  line-height: 1.8;
+  transition: color 0.2s;
+}
+.about__card-link:hover { color: #fff; }
+
+/* ── Experience items ── */
+.exp-item {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.4rem 1.4rem 1.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.exp-item__accent {
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent2));
+  border-radius: 3px 0 0 3px;
+}
+
+.exp-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.exp-item__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.975rem;
+}
+
+.exp-item__company {
+  font-size: 0.82rem;
+  color: var(--accent2);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.exp-item__date {
+  font-size: 0.72rem;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+
+.exp-item__list {
+  list-style: none;
+  margin-top: 0.5rem;
+}
+
+.exp-item__list li {
+  font-size: 0.845rem;
+  color: var(--muted);
+  line-height: 1.7;
+  padding-left: 1.1rem;
+  position: relative;
+  margin-bottom: 0.25rem;
+}
+
+.exp-item__list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.7rem;
+  top: 1px;
+}
+
+@media (max-width: 600px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .page-inner { padding: 3rem 1.25rem 4rem; }
+}
