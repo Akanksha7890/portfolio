@@ -1,9 +1,13 @@
+.contact {
+  padding: 80px 20px;
+}
+
 .contact__avail-badge {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(74,222,128,0.1);
-  border: 1px solid rgba(74,222,128,0.25);
+  background: rgba(74, 222, 128, 0.1);
+  border: 1px solid rgba(74, 222, 128, 0.25);
   border-radius: 999px;
   padding: 0.5rem 1.3rem;
   font-size: 0.82rem;
@@ -36,16 +40,20 @@
   transition: border-color 0.2s, transform 0.2s;
   display: block;
 }
+
 .contact-card:hover {
-  border-color: rgba(139,124,248,0.4);
+  border-color: rgba(139, 124, 248, 0.4);
   transform: translateY(-3px);
 }
 
 .contact-card__icon {
-  width: 40px; height: 40px;
+  width: 40px; 
+  height: 40px;
   border-radius: 12px;
-  background: rgba(139,124,248,0.14);
-  display: flex; align-items: center; justify-content: center;
+  background: rgba(139, 124, 248, 0.14);
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
   font-size: 1rem;
   margin-bottom: 0.9rem;
   font-family: var(--font-display);
@@ -72,14 +80,54 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(139,124,248,0.1);
-  border: 1px solid rgba(139,124,248,0.25);
+  background: rgba(139, 124, 248, 0.1);
+  border: 1px solid rgba(139, 124, 248, 0.25);
   border-radius: 999px;
   padding: 0.5rem 1.3rem;
   font-size: 0.82rem;
   color: var(--accent);
 }
 
-@media (max-width: 480px) {
-  .contact__grid { grid-template-columns: 1fr; }
+/* Contact Page Resume Button Styling */
+.contact__resume-btn {
+  padding: 0.8rem 2.2rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text, #ffffff);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover Effect: Glow and lift up */
+.contact__resume-btn:hover {
+  background: linear-gradient(135deg, var(--accent, #a855f7), var(--accent2, #6366f1));
+  border-color: transparent;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(168, 85, 247, 0.35);
+  color: #ffffff;
+}
+
+/* Active Effect: Click press feel */
+.contact__resume-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.2);
+}
+
+/* Mobile Responsive Optimization (Standardized to 600px for safety) */
+@media (max-width: 600px) {
+  .contact__grid { 
+    grid-template-columns: 1fr; 
+  }
+  .contact__resume-btn {
+    width: 100%;
+    justify-content: center;
+  }
 }
