@@ -4,7 +4,7 @@ import './Contact.css';
 const contactCards = [
   { icon: '✉', label: 'Email',    value: 'akankshaupadhyay657@gmail.com', href: 'mailto:akankshaupadhyay657@gmail.com' },
   { icon: 'in', label: 'LinkedIn',value: 'View Profile ↗',                 href: 'https://www.linkedin.com/in/akanksha-upadhyay-8587a42a1/' },
-  { icon: '⌥',  label: 'GitHub',  value: '25+ Repositories ↗',            href: 'https://github.com/Akanksha7890' },
+  { icon: '⌥',  label: 'GitHub',  value: '25+ Repositories ↗',            href: 'MERN Stack Developer · Open to Opportunities' },
 ];
 
 export default function Contact() {
@@ -16,11 +16,11 @@ export default function Contact() {
 
         <div className="contact__avail-badge">
           <span className="home__pulse" style={{ width: 8, height: 8, background: 'var(--green)', borderRadius: '50%', animation: 'pulse 2s ease infinite', flexShrink: 0 }} />
-          Available for freelance &amp; full-time roles
+          MERN Stack Developer &amp; · Open to Opportunities
         </div>
 
         <p className="contact__desc">
-          Whether you have a project idea, a collaboration, or just want to say hi — my inbox is always open!
+          Looking for a MERN Stack Developer to join your team or bring a project to life? Let’s connect and discuss how I can add value.
         </p>
 
         <div className="contact__grid">
