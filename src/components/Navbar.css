@@ -114,10 +114,15 @@
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.35s ease;
+  position: fixed; 
+  top: 70px; /* Navbar__inner ki height 70px hai */
+  left: 0;
+  right: 0;
+
 }
 
 .navbar__mobile--open {
-  max-height: 400px;
+  max-height: 300px;
 }
 
 .navbar__mobile-link {
@@ -127,7 +132,7 @@
   font-family: var(--font-body);
   font-size: 1rem;
   color: var(--muted);
-  padding: 0.75rem 0.5rem;
+  padding: 2rem 1.5rem;
   text-align: left;
   border-bottom: 1px solid var(--border);
   transition: color 0.2s;
