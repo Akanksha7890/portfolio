@@ -31,8 +31,9 @@ export default function Home({ navigate }) {
         <button className="btn-primary" onClick={() => navigate('projects')}>
           View Projects
         </button>
-        <button className="btn-outline" onClick={() => navigate('contact')}>
-          Get In Touch
+        
+        <button className="btn-outline" onClick={() => navigate('resume')}>
+          View Resume
         </button>
       </div>
 

@@ -1,3 +1,37 @@
+/* ==========================================================================
+   1. GLOBAL VARIABLES & UTILITIES (As per your design system)
+   ========================================================================== */
+:root {
+  --font-display: sans-serif; /* Agar koi custom font ho to change kar sakte hain */
+  --font-body: sans-serif;
+  --accent: #8b7cf8;
+  --accent2: #c084fc;
+  --accent3: #34d3f5;
+  --muted: #a1a1aa;
+  --text: #ffffff;
+  --border: rgba(255, 255, 255, 0.1);
+  --green: #22c55e;
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+/* ==========================================================================
+   2. HOME SECTION STYLES
+   ========================================================================== */
 .home {
   min-height: calc(100vh - 70px);
   display: flex;
@@ -59,9 +93,9 @@
   font-family: var(--font-display);
   font-weight: 800;
   font-size: clamp(3rem, 9vw, 6.5rem);
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -0.04em;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.35rem;
   display: flex;
   flex-direction: column;
   gap: 0.05em;
@@ -75,7 +109,7 @@
 }
 
 .home__name-sub {
-  background: linear-gradient(135deg, #fff 0%, var(--accent2) 55%, var(--accent3) 100%);
+  background: linear-gradient(135deg, #fff 0%, var(--accent2) 35%, var(--accent3) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -86,7 +120,7 @@
   font-size: clamp(0.95rem, 2.5vw, 1.2rem);
   color: var(--muted);
   font-weight: 400;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
 }
 
 .home__title strong {
@@ -109,7 +143,7 @@
   flex-wrap: wrap;
 }
 
-/* Shared button styles */
+/* Buttons */
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   color: #fff;
@@ -122,6 +156,7 @@
   font-family: var(--font-body);
   transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .btn-primary:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 32px rgba(139,124,248,0.4);
@@ -139,6 +174,7 @@
   font-family: var(--font-body);
   transition: border-color 0.2s, background 0.2s;
 }
+
 .btn-outline:hover {
   border-color: rgba(139,124,248,0.5);
   background: rgba(139,124,248,0.08);
@@ -173,7 +209,221 @@
   margin-top: 0.4rem;
 }
 
+/* ==========================================================================
+   3. RESUME PAGE & CARD LAYOUT
+   ========================================================================== */
+.resume {
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.section-label {
+  color: var(--accent2);
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+/* Actual Card layout jo PDF banta hai (Clean White/Light Background for printing) */
+.resume-card {
+  background: #ffffff;
+  color: #1e1e24;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resume-card__header {
+  border-bottom: 2px solid #e4e4e7;
+  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.resume-card__name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111115;
+  margin: 0 0 0.4rem 0;
+}
+
+.resume-card__role {
+  font-size: 1.05rem;
+  color: #4f4f56;
+  font-weight: 500;
+  margin: 0 0 0.3rem 0;
+}
+
+.resume-card__contact {
+  font-size: 0.9rem;
+  color: #71717a;
+  margin: 0;
+}
+
+/* Resume Sections inside card */
+.resume-section {
+  margin-bottom: 1.5rem;
+}
+
+.resume-section__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2563eb; /* Professional Blue accent for PDF */
+  border-bottom: 1px solid #e4e4e7;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+.resume-text {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #3f3f46;
+  margin: 0;
+}
+
+/* Rows inside sections (Education / Experience) */
+.resume-row {
+  margin-bottom: 0.85rem;
+}
+
+.resume-row__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.2rem;
+}
+
+.resume-row__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #18181b;
+}
+
+.resume-row__date {
+  font-size: 0.85rem;
+  color: #71717a;
+  font-weight: 500;
+}
+
+.resume-row__sub {
+  font-size: 0.88rem;
+  color: #4f4f56;
+  margin: 0 0 0.4rem 0;
+}
+
+/* Lists */
+.resume-list, .resume-cert-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+  color: #3f3f46;
+  line-height: 1.5;
+}
+
+.resume-list li, .resume-cert-list li {
+  margin-bottom: 0.3rem;
+}
+
+/* Technical Skills Layout */
+.resume-skills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.resume-skill-row {
+  display: flex;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.resume-skill-key {
+  font-weight: 600;
+  color: #18181b;
+  width: 160px;
+  flex-shrink: 0;
+}
+
+.resume-skill-val {
+  color: #3f3f46;
+}
+
+/* ==========================================================================
+   4. DOWNLOAD RESUME BUTTON STYLING (NEWLY OPTIMIZED)
+   ========================================================================== */
+.resume-dl-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 2.5rem auto 0 auto; /* Button centered below card */
+  background-color: #8b7cf8; /* Fallback color */
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem 2.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  font-family: var(--font-body), sans-serif;
+  box-shadow: 0 4px 15px rgba(139, 124, 248, 0.25);
+  transition: all 0.3s ease;
+}
+
+/* Button Hover State */
+.resume-dl-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(139, 124, 248, 0.45);
+  filter: brightness(1.08);
+}
+
+/* Button Click State */
+.resume-dl-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(139, 124, 248, 0.3);
+}
+
+/* ==========================================================================
+   5. MEDIA QUERIES (RESPONSIVENESS)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .resume-card {
+    padding: 1.5rem;
+  }
+  
+  .resume-row__header {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+  
+  .resume-skill-row {
+    flex-direction: column;
+  }
+  
+  .resume-skill-key {
+    width: 100%;
+    margin-bottom: 0.1rem;
+  }
+}
+
 @media (max-width: 480px) {
   .home__stats { gap: 2rem; }
   .home__desc { font-size: 0.9rem; }
+  .home { padding: 2rem 1rem; }
+  
+  .resume-dl-btn {
+    width: 100%; /* Mobile par fully block-width button */
+    padding: 0.85rem 1.5rem;
+  }
 }
